@@ -1,0 +1,50 @@
+@media screen and (max-width: 1100px) {
+    .navigation {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .nav-left {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .content-right {
+        display: none;
+    }
+    .home-article {
+        flex-direction: column;
+    }
+    .home-articles img {
+        width: 200px;
+        text-align: center;
+    }
+    .form-input {
+        width: 30%;
+        padding: 0px 5px;
+    }
+    .contact-content {
+        height: 100vh;
+    }
+    .form-box input,
+    textarea {
+        width: 188px;
+    }
+    .blog-post-content h1 {
+        font-size: 20px;
+    }
+    .blog-post-content p {
+        font-size: 16px;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .social {
+        padding: 0;
+    }
+    .post-img {
+        height: auto;
+    }
+    .home-articles h2 {
+        font: 20px;
+    }
+}

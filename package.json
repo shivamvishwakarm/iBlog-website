@@ -1,0 +1,14 @@
+{
+  "name": "blog-website",
+  "version": "1.0.0",
+  "description": "Simple blog webiste template with responsive feature",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivam Vishwakarma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
