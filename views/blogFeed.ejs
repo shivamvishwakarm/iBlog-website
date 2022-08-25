@@ -1,0 +1,33 @@
+<%- include("partial/header") %> 
+
+
+<% posts.forEach(post => { %>
+    <div class="home-articles max-width-1 m-auto  font2">
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="img/4.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href='/posts/<%=post._id%>'>
+                    <h3><%= post.title %> </h3>
+                </a>
+
+                <span> <%= post.author %>  </span>
+                <div class="max-width-1 m-auto">
+                    <hr>
+                </div>
+           <span>15 November |  <%= Math.round((post.post.length)/200) %> min read  </span> 
+            </div>
+
+        </div>
+    </div>
+ 
+<% }) %>
+
+
+
+
+
+
+
+<%- include("partial/footer") %> 

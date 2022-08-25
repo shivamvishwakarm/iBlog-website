@@ -1,0 +1,48 @@
+<%- include('partial/header'); -%>
+
+
+    <!-- This is for content -->
+    <div class="content max-width-1 m-auto my-2">
+        <div class="content-left">
+            <h1>The heaven for bloggers</h1>
+            <p>iBlog is a website which lets you submit an article which upon approval will be up on our website and you can get a good amount of reach in here Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, itaque. Itaque necessitatibus,
+                quae velit illum animi recusandae tenetur provident accusantium sunt ea odit dolor ex similique ut aperiam, architecto at deleniti, in ratione aut?</p>
+        </div>
+        <div class="content-right">
+            <img src="img/typewriter 2.svg" alt="iBlog">
+        </div>
+    </div>
+
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+
+
+
+
+
+    <h2 class="text-align-c">Features Articles</h2>
+    <% posts.forEach(post => { %>
+    <div class="home-articles max-width-1 m-auto  font2">
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="img/4.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href='/posts/<%=post._id%>'>
+               <h3> <%= post.title.substr(0,30) %></h3>
+                </a>
+
+                <span> <%= post.author %>  </span>
+                <div class="max-width-1 m-auto">
+                    <hr>
+                </div>
+                <span>15 November | 5 min read</span>
+            </div>
+
+        </div>
+    </div>
+ 
+<% }) %>
+    <!-- This is footer -->
+    <%- include('partial/footer'); -%>

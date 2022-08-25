@@ -1,0 +1,19 @@
+<%- include('partial/header') %> 
+<div class="box">
+<h1 class="text-align-c">Create a post</h1>
+    <form action="/create" method="post">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Title </label>
+            <input placeholder="Write a title for the article" type="text" name="postTitle" class="form-control" id="exampleFormControlInput1">
+            <label for="exampleFormControlInput1">Author</label>
+            <input  type="text" name="authorName" class="form-control" id="exampleFormControlInput1">
+            <label for="exampleFormControlTextarea1">Post </label>
+            <textarea placeholder="Write your article here" class="form-control" name="postBody" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-primary">Publish</button>
+    </form>
+</div>
+
+
+<%- include('partial/footer') %> 

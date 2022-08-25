@@ -1,0 +1,141 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .navigation {
+     font-family: var(--font1);
+     height: 74px;
+     /* background-color: red; */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 25px;
+ }
+ 
+ .nav-left {
+     font-size: 20px;
+     display: flex;
+ }
+ 
+ .nav-left span {
+     font-size: 35px;
+ }
+ 
+ .nav-left ul {
+     display: flex;
+     align-items: center;
+     margin: 0px 70px;
+     font-size: 20px;
+ }
+ 
+ .nav-left ul li {
+     list-style: none;
+     margin: 0 15px;
+     font-family: var(--font2);
+ }
+ 
+ .nav-left ul li a {
+     text-decoration: none;
+     color: black;
+ }
+ 
+ .nav-left ul li a:hover {
+     font-weight: bolder;
+     color: var(--main-bg-color);
+ }
+ 
+ .content {
+     display: flex;
+     height: 100%;
+     background-color: rgba(186, 186, 248, 0.973);
+     margin-top: 32px;
+     padding: 9px;
+     border-radius: 5px;
+ }
+ 
+ .content-left {
+     font-family: var(--font1);
+     /* width: 50%; */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ 
+ .content-right {
+     /* width: 50%; */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .content-right img {
+     height: 355px;
+     border: 2px solid black;
+     border-radius: 200px;
+     padding: 0px;
+ }
+ 
+ .home-articles {
+     background-color: rgba(245, 241, 227, 0.445);
+     padding: 18px;
+     margin-top: 23px;
+ }
+ 
+ .home-article {
+     display: flex;
+     margin: 25px;
+ }
+ 
+ .home-articles img {
+     width: 300px;
+     padding-top: 12px;
+ }
+ 
+ .home-article-content {
+     align-self: center;
+     padding: 25px;
+ }
+ 
+ .home-article-content a {
+     text-decoration: none;
+     color: black;
+ }
+ 
+ .footer {
+     height: 49px;
+     background-color: var(--main-bg-color);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: black;
+     flex-direction: column;
+ }
+ 
+ .footer a {
+     color: black;
+ }
+
+
+
+ /* compose css */
+
+.box{
+    padding: 40px;
+    border: 2px solid purple;
+    margin: 50px;
+}
+
+.text-align-c{
+    text-align: center;
+}
+
+form{
+    width: 50%;
+    margin: auto;
+}
+
+ .form-group{
+    display: flex;
+    flex-direction: column;
+ }

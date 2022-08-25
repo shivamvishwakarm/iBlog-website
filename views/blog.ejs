@@ -1,0 +1,83 @@
+<%- include('partial/header'); -%>
+
+    <div class="post-img">
+        <img src="/img/4.jpg" alt="">
+    </div>
+    <!-- This is for content -->
+    <div class="blog-post-content max-width-2 m-auto my-2">
+        <h1 class="font1"> <%= title %>  </h1>
+        <div class="blogpost-meta">
+            <div class="author-info">
+                <b>Author - <%= author %> </b>
+                <div>15 November. 6 min read</div>
+            </div>
+            <div class="social">
+                <img src="https://img.icons8.com/ios-glyphs/25/000000/linkedin.png" />
+                <img src="https://img.icons8.com/ios-filled/25/000000/facebook-new.png" />
+                <img src="https://img.icons8.com/ios-filled/25/000000/twitter.png" />
+             <a href="/delete/<%= id %> "><img src="https://img.icons8.com/small/25/000000/filled-trash.png"/></a>
+            </div>
+        </div>
+        <p class="font1">
+          <%= content %>
+        </p>
+    </div>
+
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+
+    <div class="home-articles max-width-1 m-auto  font2">
+        <h2>People who read this also read </h2>
+        <div class="row">
+            <div class="home-article more-post">
+                <div class="home-article-img">
+                    <img src="https://tse2.explicit.bing.net/th?id=OIP.dJC0RzkNn07eeaXXTqNx6wHaEK&pid=Api&P=0/photos" alt="article">
+                </div>
+                <div class="home-article-content font1 center">
+                    <a href="/blogpost.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <span>Author Name</span>
+                    <div class="max-width-1 m-auto">
+                        <hr>
+                    </div>
+                    <span>15 November | 5 min read</span>
+                </div>
+
+            </div>
+            <div class="home-article more-post">
+                <div class="home-article-img">
+                    <img src="https://tse2.explicit.bing.net/th?id=OIP.dJC0RzkNn07eeaXXTqNx6wHaEK&pid=Api&P=0" alt="article">
+                </div>
+                <div class="home-article-content font1 center">
+                    <a href="/blogpost.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a> <span>Author Name</span>
+                    <div class="max-width-1 m-auto">
+                        <hr>
+                    </div>
+                    <span>15 November | 5 min read</span>
+                </div>
+            </div>
+            <div class="home-article more-post">
+                <div class="home-article-img">
+                    <img src="https://tse2.explicit.bing.net/th?id=OIP.dJC0RzkNn07eeaXXTqNx6wHaEK&pid=Api&P=0/photos" alt="article">
+                </div>
+                <div class="home-article-content font1 center">
+                    <a href="/blogpost.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a> <span>Author Name</span>
+                    <div class="max-width-1 m-auto">
+                        <hr>
+                    </div>
+                    <span>15 November | 5 min read</span>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- This is footer -->
+        <%- include('partial/footer'); -%>
