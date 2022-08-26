@@ -46,25 +46,32 @@ async function main() {
   await mongoose.connect('mongodb+srv://admin-shivam:Test123@cluster0.wwzsn.mongodb.net/Blogs');
 }
 
+
+// defining the schema for user who sign up 
 const userSchema = new mongoose.Schema({
     googleId: String,
     facebookId: String,
     secret: String
 });
 
+// creating a model for user schema
 const User = new mongoose.model('User', userSchema);
+
+
+// plugins for userscheama
 userSchema.plugin(passpostLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 
-
+// defining  a schema for blogs upload 
 const blogSchema = new mongoose.Schema({
     title: String,
     author: String,
     post: String,
   });
 
-  const Blog = new mongoose.model('Blog', blogSchema);
+// creating  a model for blog schema
+const Blog = new mongoose.model('Blog', blogSchema);
 
 
 passport.serializeUser(function(user, cb) {
@@ -75,7 +82,8 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-  
+
+// sign up with google aurhenciation 
   passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
@@ -88,13 +96,12 @@ passport.deserializeUser(function(obj, cb) {
   }
 ));
 
-  // facebook authenciation
-
+// sign up with  facebook authenciation
 
   passport.use(new FacebookStrategy({
-    clientID: process.env.Facebook_CLIENT_ID, // getting CLIENT_ID_FB from .env file
-    clientSecret: process.env.Facebook_CLIENT_SECRET, //getting CLIENT_SECRET_FB from .env file
-    callbackURL: "http://localhost:8080/auth/facebook/iBlog-website" // callback url
+    clientID: process.env.Facebook_CLIENT_ID, // getting Facebook_CLIENT_ID from .env file
+    clientSecret: process.env.Facebook_CLIENT_SECRET, //getting Facebook_CLIENT_ID from .env file
+    callbackURL: "http://localhost:8080/auth/facebook/iBlog-website" // callback url 
 },
 function(accessToken, refreshToken, profile, done) {
     //check user table for anyone with a facebook ID of profile.id
@@ -116,13 +123,15 @@ function(accessToken, refreshToken, profile, done) {
                 return done(err, user);
             });
         } else {
-            //found user. Return
+            //found user Return
             return done(err, user);
         }
     });
 }
 ));
 
+
+// root route of app
 app.get("/", (req, res) => {
     Blog.find((err,results)=>{
         if(err){
@@ -135,38 +144,10 @@ app.get("/", (req, res) => {
 });
 
 
-
-
-
-
 app.get("/signup", (req,res)=>{
     res.render("login");
 });
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile','email'] }));
-
-app.get('/auth/google/iBlog-website', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
-
-  // authenticate the user from facebook
-app.get('/auth/facebook',
-passport.authenticate('facebook'));
-
-// authenticate the user from facebook with callback
-app.get('/auth/facebook/iBlog-website',
-passport.authenticate('facebook', { failureRedirect: '/login' }),
-function(req, res) {
-    // Successful authentication, redirect to Secrets page.
-    res.redirect('/'); // redirect to secrets page
-});
-
-
-// here start routes
 
 app.get("/blogs", (req, res) => {
     Blog.find((err,results)=>{
@@ -255,6 +236,33 @@ app.get("/delete/:id",(req,res)=>{
 
 
   
+});
+
+
+
+
+
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email'] }));
+
+app.get('/auth/google/iBlog-website', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
+  // authenticate the user from facebook
+app.get('/auth/facebook',
+passport.authenticate('facebook'));
+
+// authenticate the user from facebook with callback
+app.get('/auth/facebook/iBlog-website',
+passport.authenticate('facebook', { failureRedirect: '/login' }),
+function(req, res) {
+    // Successful authentication, redirect to Secrets page.
+    res.redirect('/'); // redirect to secrets page
 });
 
 app.get('/logout', function(req, res, next) {
