@@ -103,13 +103,13 @@
  }
  
  .footer {
-     height: 49px;
+
      background-color: var(--main-bg-color);
      display: flex;
      align-items: center;
      justify-content: center;
      color: black;
-     flex-direction: column;
+
  }
  
  .footer a {
